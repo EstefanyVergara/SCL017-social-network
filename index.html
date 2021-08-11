@@ -4,9 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/1eff9a4216.js" crossorigin="anonymous"></script>
   <title>¿Qué cocino hoy?</title>
 </head>
 <body>
+  
+</head>
+<body>
+  <div id="login" class="login">
+    <div class= "loginForm">
+        <img src="./img/logoquecocino.png" class="logotype">  
+        <div class ="textLoginForm"> ¡Crea maravillas con lo que tienes!</div>
+        <form id="loginForm">
+            <input type= 'text' id= "mail" class="inputForm" placeholder= "Correo Electronico" required> <br>
+            <input type= 'password' id= "pass" class="inputForm" placeholder="Contraseña" required> <br>
+            <button type='submit' class="loginButton" id="loginButton">INGRESAR</button>              
+        </form>
+        <div> 
+          <p class="option"> o </p>
+          <div class="option">Ingresa con <a id="googleLogin"></a><br>
+          <img src="img/google.png" id="googleLogin" class="googleButton"></a>
+        </div>
+        <p class="option"> ¿No tienes cuenta? </p> <a class="redirection" href="">Registrate aquí</a>
+    </div>
+</div>
+
+<div id="register" class="login"> 
+  <div class= "loginForm">
+    <button class="icon"><i class="fas fa-angle-left"></i></button>
+    <b class="acount">Crea tu cuenta</b>
+    <p class="textRegister">¡Estás a un paso más cerca! </p>
+      <img src="./img/logoquecocino.png" class="logotype">  
+      <div class ="textLoginForm"> ¡Crea maravillas con lo que tienes!</div>
+      <form id="registerForm">
+          <input type= 'text' id= "registerUser" class="inputForm" placeholder= "Nombre de usuario" required> <br>
+          <input type= 'text' id= "registerMail" class="inputForm" placeholder= "Correo Electronico" required> <br>
+          <input type= 'password' id= "registerPass" class="inputForm" placeholder="Contraseña" required> <br>
+          <button type='submit' class="loginButton" id="registerButton">REGISTRAR</button>              
+      </form>
+      <p class="option">¿Ya tienes cuenta? </p> <a class="redirection" href="">Ingresa aquí</a>
+      </div>
+</div>
+
   <script type="module" src="main.js"></script>
 </body>
 </html>
