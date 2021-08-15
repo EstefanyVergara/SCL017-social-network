@@ -104,9 +104,8 @@ font-family: Inter;
 font-style: normal;
 font-weight: 500;
 font-size: 42px;
-line-height: 20px;
+line-height: 4px;
 letter-spacing: 0.15px;
-
 color: #e8412d;
 }
 
@@ -119,9 +118,9 @@ letter-spacing: 0.15px;
 color: rgba(0, 0, 0, 0.86);
 }
 
-.icon{
+/* .icon{
 background: transparent;
 border: none;
 color: #e8412d;
 font-size: 200%;
-}
+} */

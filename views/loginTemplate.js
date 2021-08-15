@@ -14,10 +14,27 @@ export const login = () =>{
             <div class="option">Ingresa con <a id="googleLogin"></a><br>
                 <img src="img/google.png" id="googleLogin" class="googleButton"></a>
             </div>
-                <p class="option"> ¿No tienes cuenta? </p> <a class="redirection" href="">Registrate aquí</a>
+                <p class="option"> ¿No tienes cuenta? </p> <a class="redirection" id="userReg" href="#/register">Registrate aquí</a>
             </div>
         </div>
     </div>
-`
-return viewLogin;
+`;
+
+const divElement = document.createElement('div');
+divElement.innerHTML = viewLogin;
+
+
+//   // funcionalidad del login sin google
+//   const loginForm = divElement.querySelector('#loginForm');
+//   loginForm.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     const email = loginElement.querySelector('#loginMail').value;
+//     const password = loginElement.querySelector('#loginPass').value;
+//     firebaseFunctions.loginAccount(email, password);
+//     window.location.hash = '#/feed';
+//   });
+
+
+
+return divElement;
 }

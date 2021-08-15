@@ -1,7 +1,15 @@
 // Este es el punto de entrada de tu aplicacion
+import {changeRouter} from './lib/router.js'
+import { login } from './views/loginTemplate.js';
+import { register } from './views/registerTemplate.js';
 
-import { myFunction } from './lib/index.js';
-import { login} from './lib/views/loginTemplate';
-myFunction();
-document.getElementById('root').innerHTML = login();
-login();
+document.getElementById('root').appendChild(login())
+// document.getElementById('root').appendChild(register())
+
+
+const init = () =>{
+window.addEventListener('hashchange' , ()=>{ 
+changeRouter(window.location.hash);
+})
+}; 
+window.addEventListener('load', init);
