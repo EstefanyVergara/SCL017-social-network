@@ -1,4 +1,7 @@
+import {firebaseFunctions} from '../lib/firebase.js'
+
 export const login = () =>{
+    const divElement = document.createElement('div');
     const viewLogin = `
     <div id="login" class="login">
         <div class= "loginForm">
@@ -11,8 +14,8 @@ export const login = () =>{
     </form>
             <div> 
                 <p class="option"> o </p>
-            <div class="option">Ingresa con <a id="googleLogin"></a><br>
-                <img src="img/google.png" id="googleLogin" class="googleButton"></a>
+            <div class="option">Ingresa con<br>
+                <button id="googleLogin" class ="googleButton"> <img src="img/google.png"  class="googleButton"></a></button>
             </div>
                 <p class="option"> ¿No tienes cuenta? </p> <a class="redirection" id="userReg" href="#/register">Registrate aquí</a>
             </div>
@@ -20,20 +23,21 @@ export const login = () =>{
     </div>
 `;
 
-const divElement = document.createElement('div');
+
 divElement.innerHTML = viewLogin;
 
+const btnGoogle = divElement.querySelector('#googleLogin');
+btnGoogle.addEventListener('click',() =>{
+firebaseFunctions.loginGoogle();
+});
 
-//   // funcionalidad del login sin google
-//   const loginForm = divElement.querySelector('#loginForm');
-//   loginForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     const email = loginElement.querySelector('#loginMail').value;
-//     const password = loginElement.querySelector('#loginPass').value;
-//     firebaseFunctions.loginAccount(email, password);
-//     window.location.hash = '#/feed';
-//   });
+const loginForm = divElement.querySelector('#loginForm');
+loginForm.addEventListener('submit', (e) => {
+e.preventDefault();
 
+const email = divElement.querySelector('#loginMail').value;
+const password = divElement.querySelector('#loginPass').value;
+});
 
 
 return divElement;

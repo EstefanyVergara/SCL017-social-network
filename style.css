@@ -59,9 +59,11 @@ text-align: center;
 }
 
 .googleButton{
-width: 4rem;
-margin: 3%;
-cursor: pointer;
+    width: 4rem;
+    cursor: pointer;
+    border: none;
+    padding: 0%;
+    background-color: transparent;
 }
 
 .loginButton {
@@ -73,6 +75,7 @@ border: 1px solid #848282;
 box-sizing: border-box;
 box-shadow: -4px 4px 18px rgb(0 0 0 / 9%);
 border-radius: 19px;
+cursor: pointer;
 }
 
 .option {
