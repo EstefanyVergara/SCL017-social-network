@@ -1,5 +1,6 @@
 import {login} from '../views/loginTemplate.js';
 import {register} from '../views/registerTemplate.js';
+import {feed} from '../views/feedTemplate.js';
 
 export const changeRouter = (hash) =>{
     const containerRoot = document.getElementById('root');
@@ -8,13 +9,12 @@ export const changeRouter = (hash) =>{
 switch (hash) {
     case '#/':
         containerRoot.appendChild(login());
-      break;   
+    break;   
     case '#/register':
         containerRoot.appendChild(register());
-      
+    break;   
+    case '#/feed':
+        containerRoot.appendChild(feed());
 };
-
-
-
 }
 
