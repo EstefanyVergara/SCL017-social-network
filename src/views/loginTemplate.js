@@ -37,6 +37,7 @@ e.preventDefault();
 
 const email = divElement.querySelector('#loginMail').value;
 const password = divElement.querySelector('#loginPass').value;
+firebaseFunctions.loginUser(email,password);
 });
 
 

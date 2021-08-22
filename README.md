@@ -34,23 +34,56 @@ Lo más importante es que las personas puedan compartir post y fotografías de l
 
 ## 3. Historias de usuario
 
-### 1. “Como usuario quiero tener una cuenta en la red social para poder usarla exclusivamente aquí”.
+### 1. “*Como* usuario *quiero* tener una cuenta en la red social *para* usarla exclusivamente en esta red Social”.
 
 ```
 CRITERIOS DE ACEPTACIÓN:
-- Permitir ingresar un correo electrónico y una contraseña en (input).
-- Lo que se escriba en el campo (input) de contraseña debe ser secreto.
-- Mostrar error si no se han rellenado los campos. 
-- Si deseo crear una cuenta donde puedo ingresar mi nombre/nick para personalizar mi experiencia. 
+- Dado quiero tener una cuenta
+- Cuando ingreso mis datos de registro
+- Entonces se guardar en la base de datos
 
 DEFINICIÓN DE TERMINADO
 
--
--
--
-
+-Permitir ingresar un correo electrónico y una contraseña en (input).
+- Lo que se escriba en el campo (input) de contraseña debe ser secreto.
+- Mostrar errores si el usuario escribe de forma incorrecta o no rellena campos. 
+- Señalar al usuario que se ha enviado un correo de verificación de su cuenta.
 
 ```
+### 2. "*Como* usuario *quiero* ingresar a la red social con mi cuenta de Google *para* entrar de forma rápida sin tener que registrarme”.
+
+```
+CRITERIOS DE ACEPTACIÓN:
+
+- Dado que quiero ingresar sin registrarme
+- Cuando aprieto el botón de Google 
+- Entonces ingreso al feed. 
+
+DEFINICIÓN DE TERMINADO
+
+- Permitir ingresar con cuenta de Google.
+- Tener un botón con metodo de ingreso en Firebase.
+
+```
+
+### 3. "*Como* usuario *quiero* publicar los ingredientes que tengo en casa *para* que la comunidad me diga que comida puedo preparar a partir de lo que tenía”.
+
+```
+CRITERIOS DE ACEPTACIÓN:
+
+- Dado que ya inicié sesión y estoy en el feed
+- Cuando ingrese texto en la cajita de publicación y presiono publicar
+- Entonces mi publicación aparece en el feed.
+
+DEFINICIÓN DE TERMINADO
+
+- Guarda lo que el usuario escribe en Firebase.
+- Mostrar lo que se publica en el muro.
+- Tener un botón sin comportamiento para que los otros usuarios comenten la publicación. 
+
+```
+
+
 
 ## 4. Prototipos
 

@@ -1,7 +1,6 @@
-
-
 export const firebaseFunctions = {
 
+  //<--------INICIO DE SESIÓN CON GOOGLE------------->
 loginGoogle: () => {
   const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -32,6 +31,7 @@ loginGoogle: () => {
       });
   },
 
+  //<--------REGISTRO DE USUARIOS NUEVOS------------->
 registerUser : ( registerUser, registerMail, registerPass)=>{
   firebase.auth().createUserWithEmailAndPassword(registerMail, registerPass)
     .then(() => {
@@ -41,23 +41,59 @@ registerUser : ( registerUser, registerMail, registerPass)=>{
       });
       user.sendEmailVerification()
       alert('Verifica tu correo electrónico para luego iniciar sesión');
-      console.log(sendEmailVerification()); 
+      console.log('Enviando correo'); 
     })
     .catch((error) => {
       let errorCode = error.code;
       switch (errorCode) {
         case "auth/weak-password":
           alert("La contraseña debe tener entre 6 y 8 caracteres");
-          cleanFormSignUp();
-          break;
+        break;
         case "auth/invalid-email":
           alert("La dirección de correo electrónico no es correcta");
-          cleanFormSignUp();
-          break;
+        break;
         case "auth/email-already-in-use":
           alert("Este usuario ya existe");
-          cleanFormSignUp();
-          break;
+        break;
       }
     });
-}}
+},
+
+//<--------INICIO DE SESIÓN------------->
+loginUser: (loginMail, loginPass) =>{
+  firebase.auth().signInWithEmailAndPassword(loginMail, loginPass)
+  .then((userCredential) => {
+    var user = userCredential.user;
+    if (user.emailVerified){
+      window.location.assign('#/feed');
+    }else{ alert ('No haz verificado tu correo electrónico');
+    window.location.assign('#/');
+    }
+
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    if (errorCode == 'auth/user-not-found') {
+      alert ('Cuenta no registrada, registrate y vuelve a intentarlo')
+    }else if (errorCode == 'auth/wrong-password') {
+      alert ('Contraseña incorrecta')
+    } else {
+      alert(errorMessage);
+    }
+    });
+},
+
+//<--------CIERRE DE SESIÓN------------->
+closeSesion : () =>{
+  firebase.auth().onAuthStateChanged((user) => {
+    firebase.auth().signOut().then(() => {
+      // Sign-out successful.
+    }).catch((error) => {
+      console.log(error);
+    });
+    window.location.hash = '#/';
+  });
+},
+}
+
