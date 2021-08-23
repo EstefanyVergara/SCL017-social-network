@@ -2,7 +2,7 @@ import {firebaseFunctions} from '../lib/firebase.js'
 
 export const login = () =>{
     const divElement = document.createElement('div');
-    const viewLogin = `
+    const viewLogin = /*html*/ `
     <div id="login" class="login">
         <div class= "loginForm">
             <img src="./img/logoquecocino.png" class="logotype">  

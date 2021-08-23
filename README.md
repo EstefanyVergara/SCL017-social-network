@@ -99,12 +99,8 @@ En desktop:
 
 En este link podrás encontrar el prototipo de alta fidelidad en Figma.
 
- <details>
-<summary> Clic para ver el link </summary>
 https://www.figma.com/file/q312afVAlgQQq7u8cnfdjK/Qu%C3%A9-cocino?node-id=0%3A1
 
-</details>
-<br>
 
 ### 5. Interfaz
 
