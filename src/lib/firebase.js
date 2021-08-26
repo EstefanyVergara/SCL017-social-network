@@ -95,5 +95,27 @@ closeSesion : () =>{
     window.location.hash = '#/';
   });
 },
+
+//<--------CREACIÓN DE LA DATA------------->
+
+savePublish : (postContent) => {
+  const db = firebase.firestore();
+  const user = firebase.auth().currentUser;
+  db.collection("post").add({
+    user: user.displayName,
+    post: postContent,
+    avatar: user.photoURL,
+    date: firebase.firestore.FieldValue.serverTimestamp(),
+    uid: user.uid,
+    like:0,
+});
+},
+
+getPost: () => {
+const collectionPost = db.collection('post').get();
+
 }
+
+
+};
 
