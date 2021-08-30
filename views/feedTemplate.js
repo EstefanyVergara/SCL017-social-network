@@ -18,6 +18,7 @@ export const feed = () => {
       </div>
       </form>  
     </div>
+    <div class ="published" id="published"></div>
     <button id ="closed"> cerrar Sesión jeje</button>
 
 `;
@@ -50,7 +51,10 @@ e.preventDefault();
     firebaseFunctions.savePublish(postContent);
     printPost.reset();
   }
-})
+});
+
+firebaseFunctions.getPost();
+
 
 
 
