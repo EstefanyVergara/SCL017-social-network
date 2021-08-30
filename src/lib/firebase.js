@@ -1,5 +1,5 @@
-export const firebaseFunctions = {
 
+export const firebaseFunctions = {
   //<--------INICIO DE SESIÓN CON GOOGLE------------->
 loginGoogle: () => {
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -105,17 +105,39 @@ savePublish : (postContent) => {
     user: user.displayName,
     post: postContent,
     avatar: user.photoURL,
-    date: firebase.firestore.FieldValue.serverTimestamp(),
-    uid: user.uid,
+    date: (new Date().toLocaleDateString()),
+    userId: user.uid,
     like:0,
 });
 },
 
 getPost: () => {
-const collectionPost = db.collection('post').get();
+const db = firebase.firestore();
+const collectionPost = (callback) => db.collection('post').orderBy('date', 'asc')
+  .onSnapshot(callback);
+  collectionPost((querySnapshot) =>{
+      published.innerHTML = '';
+      querySnapshot.forEach(doc => {
+        published.innerHTML += /*html*/ `<div class ="postPublished">
+        ${doc.data().user}
+        <div class="postUser">    
+                        <p>${doc.data().post}</p>        
+                    </div>
+                    <div class="containerLike">
+                        <button class='btnLike' id='likePost' value='${doc.id}'> <i class="fas fa-heart"></i> </button>
+                        <span>${doc.data().like}</span>
+                        
+                        <button class="btneditar" id='editPost' value='${doc.id}' data-post="${(doc.data().post)}"><i class="far fa-edit"></i></button>
+                        <button class="btnborrar" id='deletedPost' value='${doc.id}'><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </div>
+        </div> `;
+      })
 
+  })
+},
 }
 
 
-};
+
 
