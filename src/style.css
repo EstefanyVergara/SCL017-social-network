@@ -259,14 +259,36 @@ font-size: 1.1em;
 .btn-edit{
 border: none;
 background: none;
-color:rgb(20, 19, 19);
-font-size: 1.2em;
+color: rgb(20, 19, 19);
+font-size: 1.1em;
+background: #1d7fac1a;
+width: 5%;
+padding: 1%;
+box-shadow: 0px 0px 5px #dccfcf;
+border: 1px solid rgba(16, 33, 182, 0.434);
+box-sizing: border-box;
+border-radius: 10px;
 }
 
-
 .btn-deleted{
-border: none;
-background: none;
-color:rgb(20, 19, 19);
-font-size: 1.1em;
+  border: none;
+  background: none;
+  color: rgb(20, 19, 19);
+  font-size: 1.1em;
+  background: #f8e6e6;
+  width: 5%;
+  padding: 1%;
+  box-shadow: 0px 0px 5px #dccfcf;
+border: 1px solid rgba(255, 6, 6, 0.434);
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.containerBtn{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: baseline;
+  margin: -1%;
+  
 }

@@ -109,7 +109,8 @@ export const firebaseFunctions = {
 
   savePublish: (postContent) => {
     const db = firebase.firestore();
-    const user = firebase.auth().currentUser;
+    let user = firebase.auth().currentUser;
+    
     db.collection("post").add({
       user: user.displayName,
       post: postContent,
@@ -120,8 +121,17 @@ export const firebaseFunctions = {
     });
   },
 
+  //------ PUBLICA LA DATA----//
+
   getPost: () => {
+    const deletedPost = (id) => db.collection('post').doc(id).delete();
+    
+    const editPost = (id) => db.collection('post').doc(id).get();
+  
     const db = firebase.firestore();
+
+    let id = ' ';
+
     const collectionPost = (callback) =>
       db.collection("post").orderBy("date", "desc").onSnapshot(callback);
     collectionPost((querySnapshot) => {
@@ -139,12 +149,34 @@ export const firebaseFunctions = {
                     <div class="containerLike">
                         <button i class='fas fa-heart btnLike' id='likePost' value='${textInner.id}'></i></button>
                         <span>${textInner.like}</span>
-                        <button i class='far fa-edit btn-edit' data-id='${textInner.id}'></i></button>
-                        <button i class='fas fa-trash-alt btn-deleted' data-id='${textInner.id}'></i></button>
-                    </div>
-      </div>`;
+                        </div>
+                        </div>`;
+                   
+            if (doc.data().userId == firebase.auth().currentUser.uid) {
+              //const contenedor = published.querySelector('.postPublished'); 
+              published .innerHTML += `<div class="containerBtn">
+              <button i class='far fa-edit btn-edit' data-id='${textInner.id}'></i></button>
+              <button i class='fas fa-trash-alt btn-deleted' data-id='${textInner.id}'></i></button>
+              </div>`    
+            }    
       });
 
+      //------ FUNCIONAMIENTO DE EDITAR----//
+      const btnEdit = document.querySelectorAll(".btn-edit");
+      btnEdit.forEach((btn) => {
+        btn.addEventListener("click", async (e) =>{
+          const doc = await editPost(e.target.dataset.id);
+          const task = doc.data().post;
+          id = doc.id; 
+
+          const postEditBox = prompt('Hola editame', task);
+          await db.collection('post').doc(id).update({
+            post: postEditBox,
+          });
+        });
+        });
+
+      //------ FUNCIONAMIENTO DE BOTÓN BORRAR----//
       const btnDeleted = document.querySelectorAll(".btn-deleted");
       btnDeleted.forEach((btn) => {
         btn.addEventListener("click", (e) => {
@@ -153,8 +185,11 @@ export const firebaseFunctions = {
         });
       });
     }); 
-    const deletedPost = (id) => {db.collection('post').doc(id).delete();
-  };
+      //------ FUNCIÓN BORRAR POST----//
+  
+
+      
+      
   
   
   },

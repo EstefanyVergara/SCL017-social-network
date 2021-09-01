@@ -19,6 +19,7 @@ export const feed = () => {
       </form>  
     </div>
     <div class ="published" id="published"></div>
+    
     <button id ="closed"> cerrar Sesión jeje</button>
 
 `;
