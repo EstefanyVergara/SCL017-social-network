@@ -4,7 +4,7 @@ import { login } from './views/loginTemplate.js';
 import { register } from './views/registerTemplate.js';
 import { feed } from './views/feedTemplate.js';
 
-document.getElementById('root').appendChild(login())
+document.getElementById('root').appendChild(feed())
 // document.getElementById('root').appendChild(register())
 
 
