@@ -79,7 +79,8 @@ DEFINICIÓN DE TERMINADO
 
 - Guarda lo que el usuario escribe en Firebase.
 - Mostrar lo que se publica en el muro.
-- Tener un botón sin comportamiento para que los otros usuarios comenten la publicación. 
+- Editar la publicación si es que el usuario se equivoca
+- Poder eliminar la publicación.
 
 ```
 
