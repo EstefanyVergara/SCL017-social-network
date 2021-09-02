@@ -7,7 +7,7 @@
 * [3. Historias de usuario](#3-historias-de-usuario)
 * [4. Prototipos](#4-prototipos)
 * [5. Interfaz](#5-interfaz)
-
+* [6. Deuda Técnica](#6-deuda-tecnica)
 
 ## 1. Red Social ¿Qué cocino hoy?
 
@@ -105,5 +105,14 @@ https://www.figma.com/file/q312afVAlgQQq7u8cnfdjK/Qu%C3%A9-cocino?node-id=0%3A1
 
 ### 5. Interfaz
 
+![Interfaz](src/img/interfaz1.jpg)
 
+### 6. Deuda técnica 
 
+```
+- Correción de ruteo (al actualizar la pág se va al inicio).
+- Falta hacer la versión Desktop.
+- Correción de testeo.
+- Funcionalidad de botón like - buscar.
+
+```

@@ -153,8 +153,7 @@ export const firebaseFunctions = {
                         </div>
                         </div>`
 
-        if (doc.data().userId == firebase.auth().currentUser.uid) {  // SI lo kopie 
-          //const contenedor = published.querySelector('.postPublished');
+        if (doc.data().userId == firebase.auth().currentUser.uid) {  
           published.innerHTML += `<div class="containerBtn">
               <button i class='far fa-edit btn-edit' data-id='${textInner.id}'></i></button>       
               <button i class='fas fa-trash-alt btn-deleted' data-id='${textInner.id}'></i></button>
@@ -192,15 +191,14 @@ export const firebaseFunctions = {
 
       const btnLike = document.querySelectorAll(".btnLike");
       btnLike.forEach((item) => {
-        item.addEventListener('click', () => {
-           alert('no funciono todavía :(')
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+           alert('no funciono todavía perdona las molestías')
             })
         });
 
 
     });
-
-
   },
 
 
