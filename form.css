@@ -1,0 +1,150 @@
+
+body {
+margin: 0;
+padding: 0;
+}
+
+.logotype {
+width: 319px;
+height: 254px;
+}
+
+form {
+justify-content: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.login {
+display: flex;
+flex-direction: column;
+background-image: url(./img/background.jpg);
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+background-attachment: fixed;
+height: 100vh;
+align-items: stretch;
+}
+
+.textLoginForm {
+width: 319px;
+height: 20px;
+font-family: Inter;
+font-style: normal;
+text-align: center;
+color: #e8412d;
+margin: 5%;
+font-weight: 600;
+}
+
+.loginForm {
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+align-content: center;
+align-items: center;
+margin: 3em;
+}
+
+.inputForm {
+width: 296px;
+height: 40px;
+background: #ffffff;
+border: 1px solid rgba(0, 0, 0, 0.39);
+box-sizing: border-box;
+box-shadow: -4px 4px 18px rgb(0 0 0 / 9%);
+border-radius: 19px;
+margin: -1%;
+text-align: center;
+}
+
+.googleButton{
+width: 4rem;
+cursor: pointer;
+border: none;
+padding: 0%;
+background-color: transparent;
+}
+
+.loginButton {
+width: 295px;
+height: 40px;
+color: #ffffff;
+background: #e8412d;
+border: 1px solid #848282;
+box-sizing: border-box;
+box-shadow: -4px 4px 18px rgb(0 0 0 / 9%);
+border-radius: 19px;
+cursor: pointer;
+}
+
+.option {
+font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 11px;
+letter-spacing: 0.15px;
+display: flex;
+justify-content: center;
+color: #000000;
+align-items: center;
+flex-direction: column;
+}
+
+.redirection {
+color: hsl(11deg 100% 52%);
+font-size: 12px;
+display: flex;
+justify-content: center;
+font-style: normal;
+margin: -1em;
+font-weight: 700;
+text-decoration: none;
+}
+
+.acount {
+font-family: Inter;
+font-style: normal;
+font-weight: 500;
+font-size: 42px;
+line-height: 4px;
+letter-spacing: 0.15px;
+color: #e8412d;
+}
+
+.textRegister {
+font-family: Inter;
+font-style: normal;
+font-size: 23px;
+line-height: 5px;
+letter-spacing: 0.15px;
+color: rgba(0, 0, 0, 0.86);
+}
+
+.containerPost{
+display: flex;
+border-radius: 17px;
+padding: 3%;
+padding-top: 2%;
+padding-bottom: 2%;
+margin: 3%;
+box-shadow: 0px 0px 5px #cfd8dc;
+border: 1px solid rgba(15, 11, 2, 0.434);
+box-sizing: border-box;
+background-color: rgb(255, 255, 255);
+flex-direction: column;
+flex-wrap: nowrap;
+align-items: stretch;
+border: 1px solid rgba(16, 33, 182, 0.434);
+}
+
+.feedForm{
+display: flex;
+flex-direction: column;
+align-items: stretch;
+flex-wrap: wrap;
+align-content: flex-end;
+line-height: 0em;
+}
