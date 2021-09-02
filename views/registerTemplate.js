@@ -2,7 +2,7 @@ import { firebaseFunctions } from "../lib/firebase.js";
 
 export const register = () => {
   const createAccount = document.createElement("div");
-  const viewRegister = `
+  const viewRegister = /*html*/ `
 <div id="register" class="login"> 
 <div class= "loginForm">
 
