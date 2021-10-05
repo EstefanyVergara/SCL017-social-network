@@ -135,7 +135,7 @@ export const firebaseFunctions = {
     const collectionPost = (callback) =>
       db.collection("post").orderBy("date", "desc").onSnapshot(callback);
     collectionPost((querySnapshot) => {
-      published.innerHTML = ""; //esta e la wea del post qlo
+      published.innerHTML = ""; 
       querySnapshot.forEach((doc) => {
         const textInner = doc.data();
         textInner.id = doc.id;
